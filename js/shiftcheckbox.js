@@ -9,6 +9,8 @@
  * Requires jQuery v1.7 or higher.
  */
 
+
+
 (function($) {
 	var ns = '.shiftcheckbox';
 
@@ -19,6 +21,8 @@
 			onChange				 : null,
 			ignoreClick			: null
 		}, opts);
+
+ 
 
 		if (typeof opts.onChange != 'function') {
 			opts.onChange = function(checked) { };
@@ -195,9 +199,15 @@
 	};
 })(jQuery);
 
+
+
+
+
+
 function setInfoText(text) {
 	$('.day-link').text(text);
 	if (console && console.log) console.log(text);
+ 
 }
 
 $(function() {
@@ -216,12 +226,20 @@ $(function() {
 		onChange : function(checked) {
 				setInfoText(
 						'Changed checkbox ' + $(this).attr('id')+ ' to ' + checked + ' programmatically');
-		}
-
+			}
 });
+
 
 // If you also want to handle the user clicking on a
 // checkbox, use the jQuery .change() event.
+
+$(document).on("#pageone",function(){
+  $("checkboxes").on("tap",function(){
+    $("modal").show();
+  });                       
+
+});
+
 
 $('.day :checkbox').change(function() {
 		setInfoText(

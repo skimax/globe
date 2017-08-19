@@ -45,7 +45,7 @@ function rangeMouseUp(e) {
 		if(dragStart == dragEnd){
 			$(".time").eq(dragStart).find(':checkbox').prop('checked', false);
 		}
-		alert("arr1.length");
+		
 		
 		isDragging = false;
 		dragStart = 0;
@@ -54,7 +54,15 @@ function rangeMouseUp(e) {
 	}
 	document.documentElement.onselectstart = function () { return true; }; 
 	
+$(function(){
+  $(".modal").on("click",function(){
+    $(this).show();
+  });                       
+});
+
+
 }
+
 
 function rangeMouseMove(e) {
 	if (isDragging) {
